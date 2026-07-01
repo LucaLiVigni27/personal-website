@@ -28,7 +28,7 @@ const sectionClassName =
 
 export function HomePage() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-black text-white">
+    <div className="relative min-h-screen overflow-x-hidden text-white">
       <StarfieldBackground />
       <div className="relative z-10">
         <SiteHeader />
@@ -65,7 +65,7 @@ export function HomePage() {
         <SectionReveal id="skills" className={sectionClassName}>
           <div className="mx-auto max-w-7xl">
             <ScrollReveal>
-              <SectionHeading title="Skills" eyebrow="What I Work On" />
+              <SectionHeading title="Skills" eyebrow="What I Use" />
             </ScrollReveal>
 
             <motion.div
@@ -114,17 +114,25 @@ export function HomePage() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <div className="mt-8 flex max-w-3xl flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+              <div className="mt-8 flex max-w-3xl flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
                 <p className="text-base leading-8 text-neutral-400 sm:text-lg">
                   {contact.description}
                 </p>
                 <div className="flex flex-col gap-4">
-                  <a
-                    href={`mailto:${site.email}`}
-                    className="text-lg font-medium text-white transition hover:text-emerald-400"
-                  >
-                    {site.email}
-                  </a>
+                  <div className="flex flex-col gap-2">
+                    <a
+                      href={`mailto:${site.email}`}
+                      className="text-lg font-medium text-white transition hover:text-emerald-400"
+                    >
+                      {site.email}
+                    </a>
+                    <a
+                      href={`mailto:${site.schoolEmail}`}
+                      className="text-lg font-medium text-white transition hover:text-emerald-400"
+                    >
+                      {site.schoolEmail}
+                    </a>
+                  </div>
                   <SocialLinks links={socialLinks} />
                 </div>
               </div>

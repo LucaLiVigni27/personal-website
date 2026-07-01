@@ -21,11 +21,12 @@ export type NavLink = {
 export const site = {
   name: "Luca LiVigni",
   email: "lucalivigni71@gmail.com",
+  schoolEmail: "luca27livigni@ucla.edu",
   hero: {
     greeting: "HI, I'M LUCA",
     headline: "Exploring",
-    headlineAccent: "what drives me.",
-    subtextLead: "Machine Learning Engineer building intelligent systems,",
+    headlineAccent: "what I love to build.",
+    subtextLead: "I'm a UCLA student building maching learning models,",
     subtextHighlight: "AI applications,",
     subtextTail: "and software that create",
     subtextAccent: "real impact.",
@@ -43,12 +44,12 @@ export const navLinks: NavLink[] = [
 export const socialLinks: SocialLink[] = [
   {
     label: "GitHub",
-    href: "https://github.com/",
+    href: "https://github.com/LucaLiVigni27",
     icon: "github",
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/luca-livigni/",
     icon: "linkedin",
   },
   {
@@ -60,24 +61,24 @@ export const socialLinks: SocialLink[] = [
 
 export const skills = [
   {
-    title: "Machine Learning",
+    title: "Programming",
     description:
-      "Model development, experimentation, and deploying learning systems that solve real problems.",
+      "Writing clean code and building projects across software engineering, scripting, and core programming fundamentals.",
   },
   {
-    title: "Data Science",
+    title: "Data Analysis",
     description:
-      "Exploratory analysis, visualization, and turning raw data into actionable insight.",
+      "Using statistics, visualization, and analysis to find patterns and explain data clearly.",
   },
   {
-    title: "AI Applications",
-    description:
-      "Building practical AI-powered products with modern LLM and automation workflows.",
+  title: "Machine Learning & Math",
+  description:
+    "Applying mathematical thinking, modeling, and machine learning techniques to solve technical problems.",
   },
   {
-    title: "Software Engineering",
-    description:
-      "Crafting reliable, polished web experiences with React, TypeScript, and modern tooling.",
+  title: "Problem Solving",
+  description:
+    "Breaking down complex ideas with algorithms, data structures, experimentation, and logical reasoning.",
   },
 ];
 
@@ -85,18 +86,18 @@ export const projects: Project[] = [
   {
     title: "Personal Website",
     description:
-      "An interactive portfolio with a CSS orbital hero, scroll-driven motion, and a modular project showcase.",
+      "A personal portfolio showcasing my projects, skills, and interests in machine learning, AI applications, data science, and software engineering.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind"],
     href: "#",
-    github: "https://github.com/",
+    github: "https://github.com/LucaLiVigni27/personal-website",
   },
 ];
 
 export const about = {
   heading: "About Me",
   paragraphs: [
-    "I'm a developer focused on intelligent systems and modern web experiences. I like building products that feel polished, purposeful, and a little bit futuristic.",
-    "I'm still early in my journey and actively shipping projects to grow my skills. This site will evolve as I do — reach out if you'd like to connect or collaborate.",
+    "I’m a UCLA student exploring machine learning, AI applications, data science, and software engineering. I enjoy building projects that connect code, data, and intelligent systems in practical ways.",
+    "I’m still early in my journey and focused on learning by building. This site will evolve as I keep improving my skills, shipping projects, and exploring new ideas."
   ],
 };
 

@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     optimizePackageImports: [
       "@react-three/drei",
       "@react-three/fiber",
+      "@react-three/postprocessing",
       "framer-motion",
       "three",
     ],

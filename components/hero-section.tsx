@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { OrbitalScene } from "@/components/OrbitalScene";
+import { HeroOrbitLoader } from "@/components/hero-orbit-loader";
 import { site } from "@/lib/site-data";
 
 function SparkleIcon() {
@@ -36,19 +36,19 @@ export function HeroSection() {
   return (
     <section
       id="top"
-      className="relative min-h-screen scroll-mt-28 overflow-hidden bg-black px-5 pb-28 pt-28 sm:px-8 lg:px-10"
+      className="relative min-h-screen scroll-mt-28 overflow-x-hidden px-5 pb-28 pt-28 sm:px-8 lg:px-10"
     >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-0"
-      > 
-        <div className="absolute right-[-4%] top-1/2 hidden aspect-square w-[min(52vw,560px)] -translate-y-1/2 md:block lg:right-[4%] lg:w-[min(46vw,600px)]">
-          <div className="h-full w-full rounded-full border border-emerald-500/30 bg-emerald-500/10" />
+      >
+        <div className="absolute left-[63.5%] top-[52%] hidden aspect-[6/5] w-[min(66vw,900px)] -translate-x-1/2 -translate-y-1/2 overflow-visible md:block lg:left-[66.5%] lg:top-[50%] lg:w-[min(62vw,960px)] [mask-image:radial-gradient(ellipse_100%_100%_at_50%_50%,#000_82%,transparent_100%)] [-webkit-mask-image:radial-gradient(ellipse_100%_100%_at_50%_50%,#000_82%,transparent_100%)]">
+          <HeroOrbitLoader />
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#000_0%,rgba(0,0,0,0.95)_34%,rgba(0,0,0,0.45)_62%,rgba(0,0,0,0.05)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.82)_0%,rgba(0,0,0,0.12)_34%,transparent_52%)]" />
       </div>
 
-      <div className="relative z-20 mx-auto grid w-full max-w-7xl items-center lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[minmax(0,540px)_1fr]">
+      <div className="relative z-20 mx-auto grid w-full max-w-7xl items-center lg:min-h-[calc(100vh-14rem)] lg:grid-cols-[minmax(0,540px)_1fr]">
         <div className="max-w-xl">
           <motion.p
             initial={{ opacity: 0, x: -24 }}
@@ -71,9 +71,22 @@ export function HeroSection() {
             </div>
             <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
               {site.hero.headline}{" "}
-              <span className="text-emerald-400">{site.hero.headlineAccent}</span>
+              <span className="text-emerald-400">
+                {(() => {
+                  const [first, second] = site.hero.headlineAccent.split(/\s+I\s+(.*)/);
+                  return second ? (
+                    <>
+                      {first}
+                      <br />
+                      {`I ${second}`}
+                    </>
+                  ) : (
+                    site.hero.headlineAccent
+                  );
+                })()}
+              </span>
             </h1>
-            <div className="absolute -right-2 top-16 hidden lg:block">
+            <div className="absolute right-6 top-12 hidden lg:block">
               <SparkleIcon />
             </div>
           </motion.div>

@@ -1,40 +1,25 @@
-export type OrbitLabelIcon = "ml" | "data" | "ai" | "code";
+export type OrbitLabelIcon =
+  | "ai"
+  | "skills"
+  | "projects"
+  | "software"
+  | "contact";
 
 export type OrbitLabel = {
   label: string;
   href: string;
-  theta: number;
-  phi: number;
   icon: OrbitLabelIcon;
+  /** Angle around the planet ring, in degrees (0 = right, 90 = top) */
+  angle: number;
+  /** Ring radius from the planet center */
+  radius: number;
 };
 
+/** Labels arranged around the planet, matching the reference layout */
 export const heroOrbitLabels: OrbitLabel[] = [
-  {
-    label: "Machine Learning",
-    href: "#skills",
-    theta: 0.75,
-    phi: 0.92,
-    icon: "ml",
-  },
-  {
-    label: "Data Science",
-    href: "#skills",
-    theta: 1.95,
-    phi: 0.62,
-    icon: "data",
-  },
-  {
-    label: "AI Applications",
-    href: "#skills",
-    theta: 3.55,
-    phi: 1.05,
-    icon: "ai",
-  },
-  {
-    label: "Software Engineering",
-    href: "#skills",
-    theta: 5.05,
-    phi: 0.68,
-    icon: "code",
-  },
+  { label: "AI & ML", href: "#skills", icon: "ai", angle: 116, radius: 2.38 },
+  { label: "Skills", href: "#skills", icon: "skills", angle: 50, radius: 2.34 },
+  { label: "Software", href: "#about", icon: "software", angle: -32, radius: 2.59 },
+  { label: "Contact", href: "#contact", icon: "contact", angle: -96, radius: 2.28 },
+  { label: "Projects", href: "#projects", icon: "projects", angle: 158, radius: 2.46 },
 ];

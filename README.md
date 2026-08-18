@@ -4,7 +4,7 @@ A personal portfolio website built to showcase my projects, skills, and interest
 
 ## Live Site
 
-Coming soon.
+[Open the website](https://personal-website-kappa-smoky-86.vercel.app/)
 
 ## Overview
 

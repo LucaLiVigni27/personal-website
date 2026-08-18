@@ -24,9 +24,9 @@ export const site = {
   schoolEmail: "luca27livigni@ucla.edu",
   hero: {
     greeting: "HI, I'M LUCA",
-    headline: "Exploring",
-    headlineAccent: "what I love to build.",
-    subtextLead: "I'm a UCLA student building maching learning models,",
+    headline: "Learning",
+    headlineAccent: "by building ideas.",
+    subtextLead: "I'm a UCLA student building machine learning models,",
     subtextHighlight: "AI applications,",
     subtextTail: "and software that create",
     subtextAccent: "real impact.",
@@ -61,28 +61,36 @@ export const socialLinks: SocialLink[] = [
 
 export const skills = [
   {
-    title: "Programming",
+    title: "Programming & CS",
     description:
-      "Writing clean code and building projects across software engineering, scripting, and core programming fundamentals.",
+      "Python, C++, JavaScript, SQL, data structures, algorithms, software development, database management, debugging, and software design.",
   },
   {
-    title: "Data Analysis",
+    title: "Data, Math & Statistics",
     description:
-      "Using statistics, visualization, and analysis to find patterns and explain data clearly.",
+      "Pandas, NumPy, R, probability, statistics, linear algebra, calculus, regression, hypothesis testing, and data visualization.",
   },
   {
-  title: "Machine Learning & Math",
+  title: "Machine Learning",
   description:
-    "Applying mathematical thinking, modeling, and machine learning techniques to solve technical problems.",
+    "scikit-learn, TensorFlow/Keras, PyTorch, neural networks, model evaluation, feature engineering, MLflow, and applied machine learning projects.",
   },
   {
-  title: "Problem Solving",
+  title: "Software & Tools",
   description:
-    "Breaking down complex ideas with algorithms, data structures, experimentation, and logical reasoning.",
+    "Git, Linux, React, Streamlit, Next.js, PySpark, cloud tools, APIs, RAG, embeddings, and vector databases.",
   },
 ];
 
 export const projects: Project[] = [
+  {
+    title: "Los Angeles Airbnb Price Predictor",
+    description:
+      "End-to-end machine learning project that predicts Airbnb nightly prices using listing details, location, and market factors. Includes a deployed dashboard, model comparison, PySpark analysis, and MLflow experiment tracking.",
+    tags: ["Python", "scikit-learn", "Streamlit", "PySpark", "MLflow", "Pandas"],
+    href: "https://ml-project-9d4h7f7zpphjzcdp9w6rzs.streamlit.app/",
+    github: "https://github.com/LucaLiVigni27/ml-project",
+  },
   {
     title: "Personal Website",
     description:
@@ -96,9 +104,9 @@ export const projects: Project[] = [
 export const about = {
   heading: "About Me",
   paragraphs: [
-    "I’m a UCLA student exploring machine learning, AI applications, data science, and software engineering. I enjoy building projects that connect code, data, and intelligent systems in practical ways.",
-    "I’m still early in my journey and focused on learning by building. This site will evolve as I keep improving my skills, shipping projects, and exploring new ideas."
-  ],
+    "I’m a UCLA student exploring machine learning, AI applications, data science, and software engineering. I’m interested in building practical tools that turn data, models, and ideas into useful software.",
+    "I’m currently focused on strengthening my skills through hands-on projects, internships, and real-world applications. This site will evolve as I keep improving my skills, shipping projects, and exploring new ideas."
+  ]
 };
 
 export const contact = {

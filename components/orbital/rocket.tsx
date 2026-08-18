@@ -11,9 +11,15 @@ const tempTangent = new THREE.Vector3();
 const tempLookAt = new THREE.Vector3();
 const tempTrail = new THREE.Vector3();
 
+const TRAIL_BASE_INTENSITY = [1.05, 0.78, 0.55] as const;
+const TRAIL_BASE_OPACITY = [0.48, 0.36, 0.24] as const;
+
 export function Rocket() {
   const shipRef = useRef<THREE.Group>(null);
   const trailRefs = useRef<Array<THREE.Mesh | null>>([]);
+  const trailMaterials = useRef<Array<THREE.MeshStandardMaterial | null>>([]);
+  const engineGlowRef = useRef<THREE.MeshStandardMaterial>(null);
+  const pointLightRef = useRef<THREE.PointLight>(null);
   const progress = useRef(0.62);
 
   const shipMaterial = useMemo(
@@ -26,7 +32,7 @@ export function Rocket() {
     [],
   );
 
-  useFrame((_, delta) => {
+  useFrame(({ camera }, delta) => {
     if (!shipRef.current) {
       return;
     }
@@ -41,6 +47,29 @@ export function Rocket() {
     shipRef.current.lookAt(tempLookAt);
     shipRef.current.rotateY(Math.PI / 2);
     shipRef.current.rotateZ(-0.15);
+
+    shipRef.current.getWorldPosition(tempPosition);
+    const distToCamera = camera.position.distanceTo(tempPosition);
+    const frontness = THREE.MathUtils.smoothstep(10.2, 7.4, distToCamera);
+    const glowScale = THREE.MathUtils.lerp(1, 0.38, frontness);
+
+    if (engineGlowRef.current) {
+      engineGlowRef.current.emissiveIntensity = 1.25 * glowScale;
+      engineGlowRef.current.opacity = 0.42 + 0.28 * (1 - frontness);
+    }
+
+    if (pointLightRef.current) {
+      pointLightRef.current.intensity = 0.55 * glowScale;
+    }
+
+    trailMaterials.current.forEach((material, index) => {
+      if (!material) {
+        return;
+      }
+
+      material.emissiveIntensity = TRAIL_BASE_INTENSITY[index] * glowScale;
+      material.opacity = TRAIL_BASE_OPACITY[index] * (0.55 + 0.45 * (1 - frontness));
+    });
 
     trailRefs.current.forEach((mesh, index) => {
       if (!mesh) {
@@ -77,11 +106,14 @@ export function Rocket() {
         >
           <sphereGeometry args={[0.016 - index * 0.004, 8, 8]} />
           <meshStandardMaterial
+            ref={(node) => {
+              trailMaterials.current[index] = node;
+            }}
             color={EMERALD_GLOW}
             emissive={EMERALD}
-            emissiveIntensity={1.8 - index * 0.35}
+            emissiveIntensity={TRAIL_BASE_INTENSITY[index]}
             transparent
-            opacity={0.7 - index * 0.15}
+            opacity={TRAIL_BASE_OPACITY[index]}
             toneMapped={false}
           />
         </mesh>
@@ -91,15 +123,16 @@ export function Rocket() {
         <mesh>
           <sphereGeometry args={[0.02, 10, 10]} />
           <meshStandardMaterial
+            ref={engineGlowRef}
             color={EMERALD_GLOW}
             emissive={EMERALD}
-            emissiveIntensity={2.2}
+            emissiveIntensity={1.25}
             transparent
-            opacity={0.85}
+            opacity={0.62}
             toneMapped={false}
           />
         </mesh>
-        <pointLight color={EMERALD_GLOW} intensity={1.6} distance={1.4} />
+        <pointLight ref={pointLightRef} color={EMERALD_GLOW} intensity={0.55} distance={1.1} />
       </group>
     </group>
   );

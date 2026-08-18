@@ -27,7 +27,7 @@ export function OrbitLines({ simplified = false }: OrbitLinesProps) {
         color={EMERALD_GLOW}
         lineWidth={1}
         transparent
-        opacity={0.82}
+        opacity={0.68}
       />
 
       {secondaryOrbits.map((curve, index) => (
@@ -37,7 +37,7 @@ export function OrbitLines({ simplified = false }: OrbitLinesProps) {
           color={EMERALD_GLOW}
           lineWidth={1}
           transparent
-          opacity={0.22 - index * 0.04}
+          opacity={0.12}
           dashed
           dashSize={0.1}
           gapSize={0.13}

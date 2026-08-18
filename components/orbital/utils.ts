@@ -166,20 +166,15 @@ export function getOrbitLabelPosition(orbitT: number, lift = 0.28) {
   return anchor.clone().add(anchor.clone().normalize().multiplyScalar(lift));
 }
 
-/**
- * Position on a tilted ring around the planet (in the scene group's local XY
- * plane, so it inherits ORBIT_TILT). Gives precise control over where each
- * label sits so they read like the reference layout.
- */
 export function getLabelRingPosition(angleDeg: number, radius: number) {
   const a = THREE.MathUtils.degToRad(angleDeg);
-  return new THREE.Vector3(Math.cos(a) * radius, Math.sin(a) * radius, 0);
+  return new THREE.Vector3(Math.cos(a) * radius + LABEL_RING_X_OFFSET, Math.sin(a) * radius + LABEL_RING_Y_OFFSET, 0);
 }
 
-/** Radius of the ring the label dots sit on (shared by the dashed orbit) */
 export const LABEL_DOT_RADIUS = 2.06;
+export const LABEL_RING_X_OFFSET = 0.06;
+export const LABEL_RING_Y_OFFSET = -0.05;
 
-/** Clean planar ellipse in the XZ plane (tilted into a ring by ORBIT_TILT) */
 function createEllipseOrbitXZ(radiusX: number, radiusZ: number, segments = 120) {
   const points: THREE.Vector3[] = [];
   for (let i = 0; i < segments; i += 1) {
@@ -189,12 +184,11 @@ function createEllipseOrbitXZ(radiusX: number, radiusZ: number, segments = 120) 
   return new THREE.CatmullRomCurve3(points, true, "catmullrom", 0.5);
 }
 
-/** Clean circle in the XY plane — passes through getLabelRingPosition points */
 function createRingXY(radius: number, segments = 120) {
   const points: THREE.Vector3[] = [];
   for (let i = 0; i < segments; i += 1) {
     const t = (i / segments) * Math.PI * 2;
-    points.push(new THREE.Vector3(Math.cos(t) * radius, Math.sin(t) * radius, 0));
+    points.push(new THREE.Vector3(Math.cos(t) * radius + LABEL_RING_X_OFFSET, Math.sin(t) * radius + LABEL_RING_Y_OFFSET, 0));
   }
   return new THREE.CatmullRomCurve3(points, true, "catmullrom", 0.5);
 }
@@ -221,14 +215,7 @@ export const PRIMARY_ORBIT = createEllipseOrbitXZ(2.34, 2.18);
 
 export const SECONDARY_ORBITS = [
   createRingXY(LABEL_DOT_RADIUS),
-  createTiltedRing(2.5, 1.42, 0.32),
-  createOrbitCurve({
-    radiusX: 2.08,
-    radiusY: 0.7,
-    radiusZ: 1.82,
-    wobble: 2.4,
-    phase: 3.6,
-  }),
+  createTiltedRing(2.45, 1.35, 0.24),
 ];
 
 export const DESKTOP_PLANET_POINTS = createPlanetPointCloud({

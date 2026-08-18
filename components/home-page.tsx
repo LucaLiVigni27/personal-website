@@ -65,7 +65,7 @@ export function HomePage() {
         <SectionReveal id="skills" className={sectionClassName}>
           <div className="mx-auto max-w-7xl">
             <ScrollReveal>
-              <SectionHeading title="Skills" eyebrow="What I Use" />
+              <SectionHeading title="Skills" eyebrow="What I Work With" />
             </ScrollReveal>
 
             <motion.div

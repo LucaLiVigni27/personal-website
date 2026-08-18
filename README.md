@@ -4,7 +4,7 @@ A personal portfolio website built to showcase my projects, skills, and interest
 
 ## Live Site
 
-[Open the website](https://personal-website-kappa-smoky-86.vercel.app/)
+[Open the website](https://lucalivigni.vercel.app/)
 
 ## Overview
 

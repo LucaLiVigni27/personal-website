@@ -89,7 +89,7 @@ export const projects: Project[] = [
       "End-to-end machine learning project that predicts Airbnb nightly prices using listing details, location, and market factors. Includes a deployed dashboard, model comparison, PySpark analysis, and MLflow experiment tracking.",
     tags: ["Python", "scikit-learn", "Streamlit", "PySpark", "MLflow", "Pandas"],
     href: "https://ml-project-9d4h7f7zpphjzcdp9w6rzs.streamlit.app/",
-    github: "https://github.com/LucaLiVigni27/ml-project",
+    github: "https://github.com/LucaLiVigni27/la-airbnb-price-predictor",
   },
   {
     title: "Personal Website",

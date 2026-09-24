@@ -73,7 +73,7 @@ export const skills = [
   {
   title: "Machine Learning",
   description:
-    "scikit-learn, TensorFlow/Keras, PyTorch, neural networks, model evaluation, feature engineering, MLflow, and applied machine learning projects.",
+    "scikit-learn, TensorFlow/Keras, PyTorch, neural networks, model evaluation, feature engineering, MLflow, deep learning.",
   },
   {
   title: "Software & Tools",

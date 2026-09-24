@@ -92,12 +92,20 @@ export const projects: Project[] = [
     github: "https://github.com/LucaLiVigni27/la-airbnb-price-predictor",
   },
   {
-    title: "Personal Website",
+    title: "AI Internship Assistant",
     description:
-      "A personal portfolio showcasing my projects, skills, and interests in machine learning, AI applications, data science, and software engineering.",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind"],
-    href: "#",
-    github: "https://github.com/LucaLiVigni27/personal-website",
+      "A hybrid SQL/vector RAG system for tracking and matching internship applications. FastAPI + SQLAlchemy backend, Chroma + FTS5 hybrid search fused via Reciprocal Rank Fusion, LLM-based structured extraction with citation-grounded answers, Dockerized and tested with measured retrieval/generation metrics.",
+    tags: ["Python", "FastAPI", "SQLAlchemy", "LangChain", "ChromaDB", "Docker"],
+    href: "",
+    github: "https://github.com/LucaLiVigni27/ai-internship-assistant",
+  },
+  {
+    title: "CNN Dog Breed Classifier",
+    description:
+      "🚧 In Progress — deep learning project for dog breed classification using convolutional neural networks and transfer learning.",
+    tags: ["Python", "PyTorch", "CNN", "Transfer Learning"],
+    href: "",
+    github: "https://github.com/LucaLiVigni27/dog-breed-classifier-v2",
   },
 ];
 

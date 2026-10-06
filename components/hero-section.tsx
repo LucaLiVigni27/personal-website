@@ -48,7 +48,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.82)_0%,rgba(0,0,0,0.12)_34%,transparent_52%)]" />
       </div>
 
-      <div className="relative z-20 mx-auto grid w-full max-w-7xl items-center lg:min-h-[calc(100vh-14rem)] lg:grid-cols-[minmax(0,540px)_1fr]">
+      <div className="pointer-events-none relative z-20 mx-auto grid w-full max-w-7xl items-center lg:min-h-[calc(100vh-14rem)] lg:grid-cols-[minmax(0,540px)_1fr]">
         <div className="max-w-xl">
           <motion.p
             initial={{ opacity: 0, x: -24 }}
@@ -107,7 +107,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-10 flex flex-wrap gap-4"
+            className="pointer-events-auto mt-10 flex flex-wrap gap-4"
           >
             <a
               href="#projects"

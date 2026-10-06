@@ -22,7 +22,7 @@ export type OrbitLabelOverlay = {
 };
 
 export const heroOrbitLabelOverlays: OrbitLabelOverlay[] = [
-  { label: "Home", href: "#skills", icon: "ai", top: "17%", left: "22%" },
+  { label: "Home", href: "#top", icon: "ai", top: "17%", left: "22%" },
   { label: "Skills", href: "#skills", icon: "skills", top: "9%", left: "74%" },
   { label: "Projects", href: "#projects", icon: "projects", top: "43%", left: "8%" },
   { label: "About", href: "#about", icon: "software", top: "39%", left: "80%" },
@@ -30,7 +30,7 @@ export const heroOrbitLabelOverlays: OrbitLabelOverlay[] = [
 ];
 
 export const heroOrbitLabels: OrbitLabel[] = [
-  { label: "Home", href: "#skills", icon: "ai", angle: 116, radius: 2.38 },
+  { label: "Home", href: "#top", icon: "ai", angle: 116, radius: 2.38 },
   { label: "Skills", href: "#skills", icon: "skills", angle: 50, radius: 2.34 },
   { label: "About", href: "#about", icon: "software", angle: -32, radius: 2.59 },
   { label: "Contact", href: "#contact", icon: "contact", angle: -96, radius: 2.28 },

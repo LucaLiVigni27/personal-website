@@ -102,9 +102,9 @@ export const projects: Project[] = [
   {
     title: "CNN Dog Breed Classifier",
     description:
-      "🚧 In Progress — deep learning project for dog breed classification using convolutional neural networks and transfer learning.",
-    tags: ["Python", "PyTorch", "CNN", "Transfer Learning"],
-    href: "",
+      "Classifies 12 dog breeds from a photo using transfer learning. ConvNeXt-Tiny reaches 98.5% test accuracy (vs. 30% for a CNN trained from scratch) and 59/60 on new photos it had never seen, and answers \"not sure\" for other breeds. Live Streamlit demo, Dockerised.",
+    tags: ["Python", "PyTorch", "Transfer Learning", "Computer Vision", "Streamlit", "Docker"],
+    href: "https://dog-breed-classifier-v2.streamlit.app/",
     github: "https://github.com/LucaLiVigni27/dog-breed-classifier-v2",
   },
 ];
